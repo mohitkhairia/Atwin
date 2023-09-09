@@ -4,7 +4,7 @@ import ScoreCard from './ScoreCard';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import backgroundImage from '../image/boxing.jpg'; // Replace with the actual path to your image file
+import backgroundImage from '../image/boxing.jpg'; 
 
 
 function Input(){
@@ -31,16 +31,14 @@ function Input(){
         
         // if (todo.trim() !== '') {
           const res = await axios.post('http://localhost:3001/athlete', { Athlete: Athlete, Score: {Score1,Score2,Score3} }, config);
-          // Use res.data to access the response data
           console.log(res.data)
         
-          // Instead of updating the todoList with "todo", use the response data
           setScoreList([...ScoreList, res.data]);
     
-          setAthlete(''); // Reset the todo state after adding the todo
-          setScore1(1); // Reset the todo state after adding the todo
-          setScore2(1); // Reset the todo state after adding the todo
-          setScore3(1); // Reset the todo state after adding the todo
+          setAthlete(''); 
+          setScore1(1); 
+          setScore2(1); 
+          setScore3(1); 
 
         // }
       } catch (err) {
@@ -68,10 +66,8 @@ function Input(){
     console.log(typeof(correctedScore), id)
     await axios.patch(`http://localhost:3001/athlete/${id}`, { Score: correctedScore, completed: done }, config);
 
-    // Find the index of the item being updated in the todoList state
     const itemIndex = ScoreList.findIndex((item) => item._id === id);
 
-    // If the item is found in the todoList state, update only that item
     if (itemIndex !== -1) {
       const updatedScoreList = [...ScoreList];
       updatedScoreList[itemIndex].Score = correctedScore;

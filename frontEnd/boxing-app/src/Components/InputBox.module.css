@@ -9,18 +9,15 @@
   i{
     margin: 0px 5px
   }
-  /* InputBox.module.css */
 
 .backgroundImage {
-  background-image: url('../image/boxing.jpg'); /* Replace with the actual relative path to your image file */
-  background-size: cover; /* Adjust the sizing of the background image */
-  background-repeat: no-repeat; /* Prevent the background image from repeating */
-  background-attachment: fixed; /* Fixed background */
-  /* You can add other background properties like background-position if needed */
+  background-image: url('../image/boxing.jpg'); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
 }
 
   
-  /* InputBox.module.css */
 
 .head {
   /* border: 1px solid #ccc; */

@@ -51,7 +51,7 @@ AthleteRoute.post('/', async (req,res)=>{
 
 AthleteRoute.patch('/:id', async (req, res) => {
   try {
-    const id = req.params.id; // Access "id" from params, not query
+    const id = req.params.id; 
     let {Score, completed} = req.body;
    
 
@@ -68,7 +68,7 @@ AthleteRoute.patch('/:id', async (req, res) => {
 
 AthleteRoute.delete('/:id', async (req, res) => {
   try {
-    const id = req.params.id; // Access "id" from params, not que
+    const id = req.params.id; 
 
     const data = await deleteAthlete(id);
     res.send(data);

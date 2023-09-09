@@ -34,25 +34,25 @@ async function addAthlete(athlete, {Score1,Score2,Score3}){
  }
 
  async function updateAthlete(id, Score, done) {
-    const AthleteData = await Athlete.findOne({_id: id}); // Use findById(id) instead of findByI
+    const AthleteData = await Athlete.findOne({_id: id}); 
   
     if (!AthleteData) {
       throw new Error('Athlete does not exist');
     }
   
-    const updatedAthlete = await Athlete.updateOne({ _id: id }, {Score: Score, completed: done}); // Use _id: id instead of id
+    const updatedAthlete = await Athlete.updateOne({ _id: id }, {Score: Score, completed: done}); 
   
-    return updatedAthlete; // Return updatedAthlete instead of updateAthlete
+    return updatedAthlete; 
   }
   
   async function deleteAthlete(id) {
-    const AthleteData = await Athlete.findOne({ _id: id }); // Find the document using the "id" field
+    const AthleteData = await Athlete.findOne({ _id: id }); 
   
     if (!AthleteData) {
       throw new Error('Athlete does not exist');
     }
   
-    const query = { _id: id }; // Use the "id" directly in the query
+    const query = { _id: id }; 
     const deletedAthlete = await Athlete.deleteOne(query);
   
     return deletedAthlete;

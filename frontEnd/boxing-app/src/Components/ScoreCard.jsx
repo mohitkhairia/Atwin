@@ -4,7 +4,7 @@ import styles from './ScoreCard.module.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function ScoreCard(props) {
-  let [editIndex, setEditIndex] = useState(-1); // Default to -1, indicating no element is being edited
+  let [editIndex, setEditIndex] = useState(-1); 
   let [updatedScore1, setUpdatedScore1] = useState(1);
   let [updatedScore2, setUpdatedScore2] = useState(1);
   let [updatedScore3, setUpdatedScore3] = useState(1);
@@ -58,8 +58,7 @@ function ScoreCard(props) {
        Score3: updatedScore3
       }
       props.onUpdateScoreList(updatedScoreList, id, false);
-      setEditIndex(-1); // Reset the edit index to indicate no element is being edited
-      // setUpdatedScore1(1); // Reset the updatedTodoText state
+      setEditIndex(-1); 
     
   }
 
@@ -108,7 +107,6 @@ function ScoreCard(props) {
           </div>
           
           {editIndex === index ? (
-            // Render the input box for the element being edited
         <div className={styles.contentDiv}> 
             <p className={styles.content}>{ele.Athlete}</p>
             <div>
@@ -153,7 +151,6 @@ function ScoreCard(props) {
             </div>
             </div>
           ) : (
-            // Render the <p> element for other elements
             <div className={styles.contentDiv}>
             <p className={styles.content}>{ele.Athlete}</p>
             <div>
@@ -167,7 +164,6 @@ function ScoreCard(props) {
            
           )}
           {editIndex === index ? (
-            // Render the update button if an element is being edited
             <div onClick={()=> handleUpdateScore(ele._id)}
             className={styles.updateButton}
             >Update</div>
