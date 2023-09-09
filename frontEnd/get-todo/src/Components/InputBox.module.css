@@ -1,0 +1,149 @@
+.mainBox {
+    
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  i{
+    margin: 0px 5px
+  }
+  /* InputBox.module.css */
+
+.backgroundImage {
+  background-image: url('../image/boxing.jpg'); /* Replace with the actual relative path to your image file */
+  background-size: cover; /* Adjust the sizing of the background image */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-attachment: fixed; /* Fixed background */
+  /* You can add other background properties like background-position if needed */
+}
+
+  
+  /* InputBox.module.css */
+
+.head {
+  /* border: 1px solid #ccc; */
+  width: 100%;
+  padding: 20px;
+  font-size: 28px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(103, 157, 207);
+  /* background-color: rgba(206, 206, 236, 0.8);  */
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  
+}
+
+  
+  .inputBox {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+    width: 60%;
+    background-color: rgba(229, 229, 237, 0.1);
+    border-radius: 1%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   margin-bottom: 3%;
+
+  }
+  .input{
+    height: 50px;
+    width: 80%;
+    margin: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    padding: 5px 10px;
+    font-size: medium;
+  }
+  .input:focus{
+    width: 85%;
+    font-size: larger;
+  }
+  .addButton{
+    background-color:  rgb(71, 71, 196);
+    padding: 0px 27px;
+    border-radius: 5px;
+    color: white;
+    margin-bottom: 15px;
+  }
+  .addButton:hover{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    padding: 0px 29px;
+  }
+
+  
+  .listBox{
+    border-radius: 1px solid #ccc;
+    width: 80%;
+  }
+
+  .button{
+    display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ 
+ margin:10px ;
+ width: 240px;
+ height: 60px;
+ 
+ box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+
+    }
+
+.indivisualButton{
+  background-color: rgb(71, 71, 196);
+  color: white;
+  width: 70px;
+  
+  /* font-size: large; */
+  justify-content: center;
+  text-align: center;
+  padding: 10px 10px;
+  margin: 10px 5px;
+  border-radius: 10px;
+
+}
+.indivisualButton:hover{
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  padding: 12px 12px;
+}
+.pageNumber{
+  width: 50px;
+  /* margin-left: -10px; */
+  /* border: 1px solid black; */
+  /* border-radius: 20px; */
+  font-style: italic;
+ 
+}
+
+.scores{
+  display: flex;
+  width: 87%;
+  /* border: 1px solid black; */
+  
+}
+
+.scores > p{
+  font-size: 1.4em;
+  font-weight: bold;
+  width: 100%;
+  color: rgb(59, 232, 232);
+}
+
+@media  screen and (min-width: 600px) and (max-width: 950px) {
+
+  .addButton{
+    padding: 0px 20px;
+
+  }
+}
+
+@media  screen and (min-width: 1px) and (max-width: 599px) {
+
+  .addButton{
+    padding: 0px 15px;
+    height: 50px;
+  }
+}

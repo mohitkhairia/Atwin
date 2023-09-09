@@ -1,0 +1,67 @@
+const mongoose = require('mongoose');
+const Athlete = require('../db/Athlete.model');
+
+
+async function fetchAthlete({count, page}){
+    const skip = (page -1 )* count;
+
+        const AthleteData = await Athlete.find().limit(count).skip(skip);
+
+       const documentCount = await Athlete.countDocuments()
+       const data = {AthleteData, documentCount}
+        return data;
+}
+
+async function addAthlete(athlete, {Score1,Score2,Score3}){
+ 
+    try{
+    
+    
+      let AthleteData = await Athlete.create({
+         Athlete: athlete, 
+         Score: {
+          Score1,
+        Score2,
+        Score3
+        },
+         completed: false,
+      });
+      return AthleteData;
+    }
+    catch(err){
+        console.log(err)
+    }
+ }
+
+ async function updateAthlete(id, Score, done) {
+    const AthleteData = await Athlete.findOne({_id: id}); // Use findById(id) instead of findByI
+  
+    if (!AthleteData) {
+      throw new Error('Athlete does not exist');
+    }
+  
+    const updatedAthlete = await Athlete.updateOne({ _id: id }, {Score: Score, completed: done}); // Use _id: id instead of id
+  
+    return updatedAthlete; // Return updatedAthlete instead of updateAthlete
+  }
+  
+  async function deleteAthlete(id) {
+    const AthleteData = await Athlete.findOne({ _id: id }); // Find the document using the "id" field
+  
+    if (!AthleteData) {
+      throw new Error('Athlete does not exist');
+    }
+  
+    const query = { _id: id }; // Use the "id" directly in the query
+    const deletedAthlete = await Athlete.deleteOne(query);
+  
+    return deletedAthlete;
+  }
+
+
+ module.exports = {
+    fetchAthlete,
+    addAthlete,
+    updateAthlete,
+    deleteAthlete,
+}
